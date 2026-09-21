@@ -22,6 +22,7 @@ const Download = React.lazy(() => import('@/pages/Download'));
 const SignIn = React.lazy(() => import('@/pages/SignIn'));
 const Register = React.lazy(() => import('@/pages/Register'));
 const Legal = React.lazy(() => import('@/pages/Legal'));
+const DeleteAccount = React.lazy(() => import('@/pages/DeleteAccount'));
 const NotFound = React.lazy(() => import('@/pages/NotFound'));
 
 // Scroll to top helper on route change
@@ -106,7 +107,10 @@ export function App() {
                 <Route path="/refund-policy" element={<Legal />} />
                 <Route path="/cookie-policy" element={<Legal />} />
 
-                {/* 14. 404 Catch-All */}
+                {/* 14. Delete Account */}
+                <Route path="/delete-account" element={<DeleteAccount />} />
+
+                {/* 15. 404 Catch-All */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
