@@ -52,7 +52,7 @@ export const Navbar = () => {
             className="w-10 h-10 rounded-xl object-contain drop-shadow-sm group-hover:scale-105 transition-transform"
           />
           <span className="text-2xl font-extrabold tracking-tight text-navy font-heading">
-            Norozz
+            Norozz care
           </span>
         </Link>
 
