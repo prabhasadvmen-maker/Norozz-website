@@ -72,7 +72,7 @@ export const HeroSection = ({
             <div className="flex flex-wrap items-center gap-3.5 pt-1">
               {/* Google Play */}
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.advemn.norozz"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleStoreClick('Google Play')}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PhoneCall, Phone, Ambulance, MessageCircle, Building2, Mail, MessageSquare, MapPin, CheckCircle2, ExternalLink, ShieldAlert, Users } from 'lucide-react';
+import { PhoneCall, Phone, Mail, MapPin, CheckCircle2, ExternalLink } from 'lucide-react';
 import { SUPPORT_CONTACTS } from '@/core/repositories/MockData';
 import { analytics } from '@/core/services/AnalyticsService';
 import { eventBus } from '@/core/services/EventBus';
@@ -37,134 +37,48 @@ export const ContactCards = () => {
   return (
     <section className="py-12 md:py-16 bg-surface">
       <Container>
-        {/* Top Contact Channels Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 text-left">
-          
-          {/* 1. Main Helpline */}
+        {/* Top Contact Numbers */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+
+          {/* Number 1 */}
           <a
-            href={SUPPORT_CONTACTS.mainHelpline.tel}
-            onClick={() => handleSupportClick('main_helpline')}
-            className="group p-5 bg-white rounded-2xl border border-slate-200/90 shadow-subtle hover:border-teal-300 hover:shadow-card transition-all flex items-start gap-3.5"
+            href="tel:+919289377758"
+            onClick={() => handleSupportClick('helpline_1')}
+            className="group flex items-center gap-5 p-6 bg-gradient-to-br from-teal-50 to-emerald-50 border border-teal-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <PhoneCall className="w-5 h-5" />
+            <div className="w-16 h-16 rounded-2xl bg-teal-500 text-white flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <PhoneCall className="w-7 h-7" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-muted">{SUPPORT_CONTACTS.mainHelpline.label}</span>
-                <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded-full">24/7</span>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-teal-600">Customer Helpline</span>
+                <span className="px-2 py-0.5 bg-teal-100 text-teal-700 text-[10px] font-bold rounded-full">24/7</span>
               </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-primary transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.mainHelpline.number}
+              <div className="text-2xl font-black text-navy group-hover:text-teal-600 transition-colors tracking-tight">
+                92893 77758
               </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">General queries & customer help</p>
+              <p className="text-xs text-slate-500 mt-1">General queries & customer support</p>
             </div>
           </a>
 
-          {/* 2. Booking Helpline */}
+          {/* Number 2 */}
           <a
-            href={SUPPORT_CONTACTS.booking.tel}
-            onClick={() => handleSupportClick('booking')}
-            className="group p-5 bg-white rounded-2xl border border-slate-200/90 shadow-subtle hover:border-blue-300 hover:shadow-card transition-all flex items-start gap-3.5"
+            href="tel:+919289377759"
+            onClick={() => handleSupportClick('helpline_2')}
+            className="group flex items-center gap-5 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Phone className="w-5 h-5" />
+            <div className="w-16 h-16 rounded-2xl bg-blue-500 text-white flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <Phone className="w-7 h-7" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-muted">{SUPPORT_CONTACTS.booking.label}</span>
-                <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-[10px] font-bold rounded-full">Instant</span>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600">Booking Helpline</span>
+                <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-full">Instant</span>
               </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-primary transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.booking.number}
+              <div className="text-2xl font-black text-navy group-hover:text-blue-600 transition-colors tracking-tight">
+                92893 77759
               </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">Assisted booking & scheduling</p>
-            </div>
-          </a>
-
-          {/* 3. Emergency Line */}
-          <a
-            href={SUPPORT_CONTACTS.emergency.tel}
-            onClick={() => handleSupportClick('emergency')}
-            className="group p-5 bg-white rounded-2xl border border-red-200/90 shadow-subtle hover:border-red-400 hover:shadow-card transition-all flex items-start gap-3.5 bg-red-50/20"
-          >
-            <div className="w-11 h-11 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Ambulance className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-red-600">{SUPPORT_CONTACTS.emergency.label}</span>
-                <span className="px-2 py-0.5 bg-red-100 text-red-700 text-[10px] font-bold rounded-full">Priority SLA</span>
-              </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-red-600 transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.emergency.number}
-              </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">Urgent repairs & damage escalations</p>
-            </div>
-          </a>
-
-          {/* 4. WhatsApp Support */}
-          <a
-            href={SUPPORT_CONTACTS.whatsapp.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => handleSupportClick('whatsapp')}
-            className="group p-5 bg-white rounded-2xl border border-slate-200/90 shadow-subtle hover:border-emerald-300 hover:shadow-card transition-all flex items-start gap-3.5"
-          >
-            <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <MessageCircle className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-muted">{SUPPORT_CONTACTS.whatsapp.label}</span>
-                <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded-full">Online</span>
-              </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-emerald-600 transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.whatsapp.number}
-              </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">Instant messaging & photo sharing</p>
-            </div>
-          </a>
-
-          {/* 5. Provider / Partner Support */}
-          <a
-            href={SUPPORT_CONTACTS.provider.tel}
-            onClick={() => handleSupportClick('provider_support')}
-            className="group p-5 bg-white rounded-2xl border border-slate-200/90 shadow-subtle hover:border-teal-300 hover:shadow-card transition-all flex items-start gap-3.5"
-          >
-            <div className="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Building2 className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-muted">{SUPPORT_CONTACTS.provider.label}</span>
-                <span className="px-2 py-0.5 bg-teal-50 text-teal-700 text-[10px] font-bold rounded-full">Partners</span>
-              </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-primary transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.provider.number}
-              </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">Onboarding, payouts & partner desk</p>
-            </div>
-          </a>
-
-          {/* 6. Email Support */}
-          <a
-            href={`mailto:${SUPPORT_CONTACTS.email}`}
-            onClick={() => handleSupportClick('email')}
-            className="group p-5 bg-white rounded-2xl border border-slate-200/90 shadow-subtle hover:border-teal-300 hover:shadow-card transition-all flex items-start gap-3.5"
-          >
-            <div className="w-11 h-11 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-muted">Official Email Contact</span>
-                <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-[10px] font-bold rounded-full">Fast Reply</span>
-              </div>
-              <div className="text-base font-extrabold text-navy group-hover:text-primary transition-colors mt-0.5">
-                {SUPPORT_CONTACTS.email}
-              </div>
-              <p className="text-[11px] text-slate-muted mt-0.5">Response within 15 minutes</p>
+              <p className="text-xs text-slate-500 mt-1">Assisted booking & scheduling</p>
             </div>
           </a>
 

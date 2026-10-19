@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ASSETS } from '@/core/repositories/MockData';
 import { analytics } from '@/core/services/AnalyticsService';
-import { PhoneCall, Phone, Ambulance, Smartphone, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { PhoneCall, Phone, MapPin } from 'lucide-react';
 
 export const Footer = () => {
   const handleStoreClick = (platform) => {
@@ -34,32 +34,12 @@ export const Footer = () => {
               <div className="flex items-center gap-2">
                 <PhoneCall className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span className="text-slate-400">Helpline:</span>
-                <a href="tel:8796612243" className="font-bold text-white hover:text-primary transition-colors">8796612243</a>
+                <a href="tel:+919289377758" className="font-bold text-white hover:text-primary transition-colors">92893 77758</a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span className="text-slate-400">Booking:</span>
-                <a href="tel:8796612244" className="font-bold text-white hover:text-primary transition-colors">8796612244</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Ambulance className="w-3.5 h-3.5 text-red-400 shrink-0" />
-                <span className="text-slate-400">Emergency:</span>
-                <a href="tel:8796612245" className="font-bold text-red-400 hover:underline">8796612245</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Smartphone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <span className="text-slate-400">Official Line:</span>
-                <a href="tel:8860036008" className="font-bold text-white hover:text-primary">8860036008</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span className="text-slate-400">WhatsApp:</span>
-                <a href="https://wa.me/918796612246" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-400 hover:underline">8796612246</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-teal-300 shrink-0" />
-                <span className="text-slate-400">Email:</span>
-                <a href="mailto:NOROZZCARE@GMAIL.COM" className="font-bold text-teal-300 hover:underline">NOROZZCARE@GMAIL.COM</a>
+                <a href="tel:+919289377759" className="font-bold text-white hover:text-primary transition-colors">92893 77759</a>
               </div>
               <div className="flex items-start gap-2 pt-1">
                 <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
@@ -165,7 +145,7 @@ export const Footer = () => {
             </h4>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5">
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.advemn.norozz"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleStoreClick('Google Play')}

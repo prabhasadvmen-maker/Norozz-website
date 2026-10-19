@@ -106,7 +106,7 @@ export const Navbar = () => {
 
           {/* Google Play Button */}
           <a
-            href="https://play.google.com/store"
+            href="https://play.google.com/store/apps/details?id=com.advemn.norozz"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => handleStoreClick('Google Play')}
@@ -178,7 +178,7 @@ export const Navbar = () => {
             )}
 
             <a
-              href="https://play.google.com/store"
+              href="https://play.google.com/store/apps/details?id=com.advemn.norozz"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleStoreClick('Google Play Mobile')}

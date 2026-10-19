@@ -30,7 +30,7 @@ export const AppPromoBand = () => {
 
             <div className="flex flex-wrap gap-3.5 pt-2">
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.advemn.norozz"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleStoreClick('Google Play')}
